@@ -14,40 +14,50 @@ const CROSSES = [
   { top: '70%', right: '40%', size: 12, opacity: .12, color: 'var(--brand-300)', animation: 'drift 11s ease-in-out infinite 2s' },
 ];
 
+const HERO_STATS = [
+  { target: 21,  suffix: '',   label: 'Год опыта' },
+  { target: 11,  suffix: 'K+', label: 'Пациентов' },
+  { target: 21,  suffix: '',   label: 'Специалиста' },
+];
+
 export default function Hero() {
-  const sectionRef = useRef(null);
+  const statsRef = useRef(null);
 
   useEffect(() => {
-    const statVals = sectionRef.current?.querySelectorAll('.stat-val[data-target]');
-    if (!statVals?.length) return;
+    const els = statsRef.current?.querySelectorAll('[data-target]');
+    if (!els?.length) return;
 
-    const co = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const el = e.target;
-            const target = +el.dataset.target;
-            let val = 0;
-            const dur = 2200;
-            const step = target / (dur / 16);
-            const t = setInterval(() => {
-              val = Math.min(val + step, target);
-              el.textContent = Math.floor(val).toLocaleString();
-              if (val >= target) clearInterval(t);
-            }, 16);
-            co.unobserve(el);
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = +el.dataset.target;
+          const suffix = el.dataset.suffix ?? '';
+          const duration = 2200;
+          let start = null;
+
+          function step(ts) {
+            if (!start) start = ts;
+            const progress = Math.min((ts - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target).toLocaleString() + suffix;
+            if (progress < 1) requestAnimationFrame(step);
           }
+
+          requestAnimationFrame(step);
+          observer.unobserve(el);
         });
       },
       { threshold: 0.3 },
     );
 
-    statVals.forEach((el) => co.observe(el));
-    return () => co.disconnect();
+    els.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section id="hero" ref={sectionRef}>
+    <section id="hero">
       <div className="hero-bg"></div>
       <div className="hero-blob-1"></div>
       <div className="hero-blob-2"></div>
@@ -80,21 +90,26 @@ export default function Hero() {
 
       <div className="container">
         <div className="hero-grid">
+
+          {/* ── LEFT ── */}
           <div>
             <div className="hero-badge">
               <span className="hero-dot"></span>
               Частная клиника · Киев · Лицензия МЗ №1584
             </div>
+
             <h1 className="hero-title font-display">
               Путь к<br />
               <span className="text-gold">свободной</span>
               <br />
               жизни — здесь
             </h1>
+
             <p className="hero-sub font-body">
               21 год помогаем людям преодолевать зависимость. Индивидуальный подход, передовые
               методы лечения и полная анонимность в сердце Киева.
             </p>
+
             <div className="hero-ctas">
               <a href="#contact" className="btn btn-gold">
                 Получить помощь
@@ -109,6 +124,7 @@ export default function Hero() {
                 Позвонить сейчас
               </a>
             </div>
+
             <div className="hero-trust">
               <div className="hero-trust-item"><span className="ico">🔒</span>Полная анонимность</div>
               <div className="hero-trust-item"><span className="ico">⚡</span>Помощь 24/7</div>
@@ -116,6 +132,7 @@ export default function Hero() {
             </div>
           </div>
 
+          {/* ── RIGHT ── */}
           <div className="hero-right">
             <div className="hero-card-main glass-dark">
               <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.35rem', fontWeight: 600, color: '#fff', marginBottom: '.4rem' }}>
@@ -124,44 +141,46 @@ export default function Hero() {
               <p style={{ fontSize: '.84rem', color: 'rgba(255,255,255,.52)', fontWeight: 300, lineHeight: 1.6, marginBottom: 0 }}>
                 Детоксикация · Реабилитация · Постреабилитация
               </p>
-              <div className="hero-stats-grid">
-                <div className="hero-stat-box">
-                  <div className="hero-stat-val">21</div>
-                  <div className="hero-stat-lbl">Год опыта</div>
-                </div>
-                <div className="hero-stat-box">
-                  <div className="hero-stat-val">11K+</div>
-                  <div className="hero-stat-lbl">Пациентов</div>
-                </div>
-                <div className="hero-stat-box">
-                  <div className="hero-stat-val">21</div>
-                  <div className="hero-stat-lbl">Специалиста</div>
-                </div>
-              </div>
-            </div>
 
-            <div className="hero-badge-float glass-gold">
-              <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg,var(--sap-700),var(--sap-600))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
-                ✓
+              <div className="hero-stats-grid" ref={statsRef}>
+                {HERO_STATS.map(({ target, suffix, label }, i) => (
+                  <div key={i} className="hero-stat-box">
+                    <div
+                      className="hero-stat-val"
+                      data-target={target}
+                      data-suffix={suffix}
+                    >
+                      0
+                    </div>
+                    <div className="hero-stat-lbl">{label}</div>
+                  </div>
+                ))}
               </div>
-              <div>
-                <div style={{ fontSize: '.77rem', fontWeight: 600, color: '#fff' }}>Анонимное лечение</div>
-                <div style={{ fontSize: '.63rem', color: 'rgba(249,189,21,.7)', marginTop: 2 }}>
-                  Конфиденциальность гарантирована
+            </div>
+              <div style={{ position: 'absolute', bottom: '25%', left: '5%', right: '-3%', display: 'flex', alignItems: 'center', gap: '3rem' }}>
+
+                <div className="hero-badge-float2 anim-float" style={{ animationDelay: '1.5s', position: 'static' }}>
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="var(--sap-950)" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  093 170 79 89
+                </div>
+
+                <div className="hero-badge-float glass-gold" style={{ position: 'static', borderRadius: '1.35rem', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem', flex: 1 }}>
+                  <div style={{ width: 42, height: 42, borderRadius: '50%', background: 'linear-gradient(135deg,var(--sap-700),var(--sap-600))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', flexShrink: 0 }}>
+                    ✓
+                  </div>
+                  <div>
+                    <div style={{ fontSize: '.77rem', fontWeight: 600, color: '#fff' }}>Анонимное лечение</div>
+                    <div style={{ fontSize: '.63rem', color: 'rgba(249,189,21,.7)', marginTop: 2 }}>
+                      Конфиденциальность гарантирована
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="hero-badge-float2 anim-float" style={{ animationDelay: '1.5s' }}>
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="var(--sap-950)" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              093 170 79 89
-            </div>
-          </div>
-        </div>
       </div>
-
+    </div>
+  </div>  
       <div className="scroll-ind">
         <div className="scroll-mouse">
           <div className="scroll-wheel"></div>

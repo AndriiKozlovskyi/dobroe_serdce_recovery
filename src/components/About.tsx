@@ -5,98 +5,68 @@ export default function About() {
         <div className="container">
           <div className="about-grid">
             <div className="about-visual reveal-l">
-              <div className="about-img-main">
-                <div className="about-img-bg">
-                  <div className="about-img-word">RECOVERY</div>
-                  <div className="about-img-lines">
-                    <div
-                      className="about-img-line"
-                      style={{
-                        width: '100%',
-                        background: 'linear-gradient(90deg,rgba(249,189,21,.18),transparent)',
-                      }}
-                    ></div>
-                    <div
-                      className="about-img-line"
-                      style={{
-                        width: '78%',
-                        background: 'linear-gradient(90deg,rgba(249,189,21,.12),transparent)',
-                      }}
-                    ></div>
-                    <div
-                      className="about-img-line"
-                      style={{
-                        width: '90%',
-                        background: 'linear-gradient(90deg,rgba(249,189,21,.15),transparent)',
-                      }}
-                    ></div>
-                    <div
-                      className="about-img-line"
-                      style={{
-                        width: '62%',
-                        background: 'linear-gradient(90deg,rgba(249,189,21,.1),transparent)',
-                      }}
-                    ></div>
-                    <div
-                      className="about-img-line"
-                      style={{
-                        width: '85%',
-                        background: 'linear-gradient(90deg,rgba(249,189,21,.14),transparent)',
-                      }}
-                    ></div>
+            <div className="about-img-main">
+              <div className="about-img-bg" style={{ justifyContent: 'flex-start', gap: '1.5rem' }}>
+
+                {/* Header */}
+                <div>
+                  <div style={{ fontSize: '.6rem', letterSpacing: '.2em', textTransform: 'uppercase', color: 'rgba(249,189,21,.6)', marginBottom: '.4rem' }}>
+                    Центр Recovery · Киев
                   </div>
-                  <span className="about-img-lbl">Реабилитационный центр · Киев</span>
-                </div>
-                <div className="about-img-orb">🏥</div>
-              </div>
-              <div
-                className="about-card-float glass"
-                style={{ boxShadow: '0 24px 64px rgba(0,36,85,.16)' }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '.8rem',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg,var(--sap-700),var(--brand-500))',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '1.5rem',
-                      flexShrink: 0,
-                    }}
-                  >
-                    🔒
-                  </div>
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '.82rem',
-                        fontWeight: 600,
-                        color: 'var(--sap-800)',
-                      }}
-                    >
-                      Лицензия МЗ Украины
-                    </div>
-                    <div
-                      style={{
-                        fontSize: '.7rem',
-                        color: 'var(--ink-500)',
-                        marginTop: '2px',
-                      }}
-                    >
-                      №1584/23/М
-                    </div>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.6rem', fontWeight: 700, color: '#fff', lineHeight: 1.1 }}>
+                    21 год<br />
+                    <span style={{ fontSize: '1rem', fontWeight: 400, color: 'rgba(255,255,255,.5)' }}>профессиональной помощи</span>
                   </div>
                 </div>
+
+                {/* Stats row */}
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '.75rem' }}>
+                  {[
+                    { val: '11K+', lbl: 'Пациентов' },
+                    { val: '96%', lbl: 'Успешность' },
+                    { val: '24/7', lbl: 'Поддержка' },
+                  ].map(({ val, lbl }) => (
+                    <div key={lbl} style={{ background: 'rgba(255,255,255,.06)', border: '1px solid rgba(249,189,21,.12)', borderRadius: '.9rem', padding: '.85rem .6rem', textAlign: 'center' }}>
+                      <div style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.3rem', fontWeight: 700, color: 'var(--brand-400)', lineHeight: 1 }}>{val}</div>
+                      <div style={{ fontSize: '.58rem', color: 'rgba(255,255,255,.38)', marginTop: '4px', letterSpacing: '.08em', textTransform: 'uppercase' }}>{lbl}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Heartbeat SVG line */}
+                <div style={{ padding: '.5rem 0' }}>
+                  <div style={{ fontSize: '.58rem', color: 'rgba(255,255,255,.3)', letterSpacing: '.12em', textTransform: 'uppercase', marginBottom: '.5rem' }}>Мониторинг состояния</div>
+                  <svg viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%' }}>
+                    <polyline
+                      points="0,24 30,24 40,8 50,38 60,18 70,28 80,24 120,24 130,4 140,42 150,14 160,32 170,24 260,24"
+                      stroke="rgba(249,189,21,0.7)"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      fill="none"
+                    />
+                    <circle cx="170" cy="24" r="3" fill="var(--brand-500)" opacity=".9">
+                      <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite" />
+                    </circle>
+                  </svg>
+                </div>
+
+                {/* Status pills */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '.6rem' }}>
+                  {[
+                    { dot: '#4ade80', label: 'Принимаем пациентов' },
+                    { dot: 'var(--brand-500)', label: 'Анонимность гарантирована' },
+                    { dot: 'var(--sap-400)', label: 'Лицензия МЗ №1584' },
+                  ].map(({ dot, label }) => (
+                    <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '.6rem' }}>
+                      <div style={{ width: 7, height: 7, borderRadius: '50%', background: dot, flexShrink: 0 }}></div>
+                      <div style={{ fontSize: '.75rem', color: 'rgba(255,255,255,.52)', fontWeight: 300 }}>{label}</div>
+                    </div>
+                  ))}
+                </div>
+
               </div>
+            </div>
               <div className="about-accent"></div>
             </div>
             <div>

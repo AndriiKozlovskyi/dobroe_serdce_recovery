@@ -51,11 +51,9 @@ export default function FAQ() {
                 <span className="acc-q">{item.q}</span>
                 <span className="acc-ic">{openIdx === i ? '−' : '+'}</span>
               </button>
-              {openIdx === i && (
-                <div className="acc-body">
+                <div className={`acc-body${openIdx === i ? 'open' : ''}`}>
                   <p className="acc-p">{item.a}</p>
                 </div>
-              )}
             </div>
           ))}
         </div>

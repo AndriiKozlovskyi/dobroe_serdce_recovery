@@ -1,6 +1,4 @@
 import { useEffect } from 'react';
-import './index.css';
-import './App.css';
 import About from './components/About';
 import Contacts from './components/Contacts';
 import CTA from './components/CTA';
@@ -15,6 +13,7 @@ import Stats from './components/Stats';
 import Team from './components/Team';
 import Testimonials from './components/Testimonials';
 import DetoxAccordion from './components/DetoxAccordion';
+import './index.css';
 
 export default function App() {
   useEffect(() => {
