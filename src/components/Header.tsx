@@ -51,32 +51,69 @@ export default function Header() {
 				↑
 			</button>
 			<div className="mobile-menu" id="mobileMenu">
-				<a href="#hero" onClick={closeMobile}>
-					{t('header.home')}
-				</a>
-				<a href="#services" onClick={closeMobile}>
-					{t('header.services')}
-				</a>
-				<a href="#about" onClick={closeMobile}>
-					{t('header.about')}
-				</a>
-				<a href="#team" onClick={closeMobile}>
-					{t('header.team')}
-				</a>
-				<a href="#testi" onClick={closeMobile}>
-					{t('header.testimonials')}
-				</a>
-				<a href="#contact" onClick={closeMobile}>
-					{t('header.contacts')}
-				</a>
-				<a
-					href="tel:+380931707989"
-					className="btn btn-gold btn-sm"
-					style={{ marginTop: "1rem" }}
-				>
-					{t('header.phone')}
-				</a>
+				<div className="mobile-menu-header">
+					<a href="#hero" className="mobile-menu-logo">
+						<span className="mobile-menu-logo-text">
+							<span className="text-gold">RE</span>COVERY
+						</span>
+					</a>
+				</div>
+				
+				<nav className="mobile-menu-nav">
+					<a href="#hero" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">🏠</span>
+						<span className="menu-link-text">{t('header.home')}</span>
+					</a>
+					<a href="#services" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">⚕️</span>
+						<span className="menu-link-text">{t('header.services')}</span>
+					</a>
+					<a href="#about" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">ℹ️</span>
+						<span className="menu-link-text">{t('header.about')}</span>
+					</a>
+					<a href="#stages" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">📋</span>
+						<span className="menu-link-text">{t('header.treatment')}</span>
+					</a>
+					<a href="#team" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">👥</span>
+						<span className="menu-link-text">{t('header.team')}</span>
+					</a>
+					<a href="#testi" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">⭐</span>
+						<span className="menu-link-text">{t('header.testimonials')}</span>
+					</a>
+					<a href="#faq" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">❓</span>
+						<span className="menu-link-text">{t('header.faq')}</span>
+					</a>
+					<a href="#contact" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">📍</span>
+						<span className="menu-link-text">{t('header.contacts')}</span>
+					</a>
+				</nav>
+
+				<div className="mobile-menu-divider"></div>
+
+				<div className="mobile-menu-bottom">
+					<a
+						href="tel:+380931707989"
+						className="btn btn-gold btn-sm mobile-menu-phone"
+					>
+						📞 {t('header.phone')}
+					</a>
+					<button
+						onClick={toggleLanguage}
+						className="mobile-menu-lang"
+						aria-label="Переключить язык"
+						title={i18n.language === 'ru' ? 'Қазақша' : 'Русский'}
+					>
+						{i18n.language === 'ru' ? '🇰🇿 KZ' : '🇷🇺 RU'}
+					</button>
+				</div>
 			</div>
+
 			<nav id="nav">
 				<div className="nav-inner">
 					<a href="#hero" className="nav-logo">
