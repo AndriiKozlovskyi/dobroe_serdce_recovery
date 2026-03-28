@@ -25,7 +25,7 @@ export default function Stats() {
 				if (start === null) start = ts;
 				const progress = Math.min((ts - start) / DURATION, 1);
 				const eased = 1 - Math.pow(1 - progress, 3);
-				valEl.textContent = Math.round(eased * target).toLocaleString() + suffix;
+				valEl!.textContent = Math.round(eased * target).toLocaleString() + suffix;
 				if (progress < 1) requestAnimationFrame(step);
 			}
 
