@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const PARTICLES = [
 	{
@@ -71,13 +72,8 @@ const CROSSES = [
 	},
 ];
 
-const HERO_STATS = [
-	{ target: 21, suffix: "", label: "Год опыта" },
-	{ target: 11, suffix: "K+", label: "Пациентов" },
-	{ target: 21, suffix: "", label: "Специалиста" },
-];
-
 export default function Hero() {
+	const { t } = useTranslation();
 	const statsRef = useRef<HTMLDivElement | null>(null);
 
 	useEffect(() => {
@@ -168,113 +164,62 @@ export default function Hero() {
 
 			<div className="container">
 				<div className="hero-grid">
-					{/* ── LEFT ── */}
 					<div>
 						<div className="hero-badge">
 							<span className="hero-dot"></span>
-							Частная клиника · Астана · Лицензия МЗ №1584
+							{t('hero.badge')}
 						</div>
 
 						<h1 className="hero-title font-display">
-							Путь к<br />
-							<span className="text-gold">свободной</span>
-							<br />
-							жизни — здесь
+							{t('hero.title').split('\n').map((line, i) => (
+								<span key={i}>{line}<br /></span>
+							))}
 						</h1>
 
 						<p className="hero-sub font-body">
-							21 год помогаем людям преодолевать зависимость. Индивидуальный
-							подход, передовые методы лечения и полная анонимность в сердце
-							Астаны.
+							{t('hero.subtitle')}
 						</p>
 
 						<div className="hero-ctas">
 							<a href="#contact" className="btn btn-gold">
-								Получить помощь
-								<svg
-									width="14"
-									height="14"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-									strokeWidth="2.5"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M17 8l4 4m0 0l-4 4m4-4H3"
-									/>
+								{t('hero.cta1')}
+								<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 								</svg>
 							</a>
 							<a href="tel:+380931707989" className="btn btn-ghost">
-								<svg
-									width="14"
-									height="14"
-									fill="none"
-									viewBox="0 0 24 24"
-									stroke="currentColor"
-									strokeWidth="2.5"
-								>
-									<path
-										strokeLinecap="round"
-										strokeLinejoin="round"
-										d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-									/>
+								<svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+									<path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
 								</svg>
-								Позвонить сейчас
+								{t('hero.cta2')}
 							</a>
 						</div>
 
 						<div className="hero-trust">
-							<div className="hero-trust-item">
-								<span className="ico">🔒</span>Полная анонимность
-							</div>
-							<div className="hero-trust-item">
-								<span className="ico">⚡</span>Помощь 24/7
-							</div>
-							<div className="hero-trust-item">
-								<span className="ico">🏥</span>Лицензированная клиника
-							</div>
+							<div className="hero-trust-item"><span className="ico">🔒</span>{t('hero.trust1')}</div>
+							<div className="hero-trust-item"><span className="ico">⚡</span>{t('hero.trust2')}</div>
+							<div className="hero-trust-item"><span className="ico">🏥</span>{t('hero.trust3')}</div>
 						</div>
 					</div>
 
-					{/* ── RIGHT ── */}
 					<div className="hero-right">
 						<div className="hero-card-main glass-dark">
-							<div
-								style={{
-									fontFamily: "'Playfair Display', serif",
-									fontSize: "1.35rem",
-									fontWeight: 600,
-									color: "#fff",
-									marginBottom: ".4rem",
-								}}
-							>
-								Программа Recovery
+							<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.35rem", fontWeight: 600, color: "#fff", marginBottom: ".4rem" }}>
+								{t('hero.program')}
 							</div>
-							<p
-								style={{
-									fontSize: ".84rem",
-									color: "rgba(255,255,255,.52)",
-									fontWeight: 300,
-									lineHeight: 1.6,
-									marginBottom: 0,
-								}}
-							>
-								Детоксикация · Реабилитация · Постреабилитация
+							<p style={{ fontSize: ".84rem", color: "rgba(255,255,255,.52)", fontWeight: 300, lineHeight: 1.6, marginBottom: 0 }}>
+								{t('hero.programDesc')}
 							</p>
 
 							<div className="hero-stats-grid" ref={statsRef}>
-								{HERO_STATS.map(({ target, suffix, label }, i) => (
+								{[
+									{ target: 21, suffix: "", key: 'stat1' },
+									{ target: 11, suffix: "K+", key: 'stat2' },
+									{ target: 21, suffix: "", key: 'stat3' }
+								].map(({ target, suffix, key }, i) => (
 									<div key={i} className="hero-stat-box">
-										<div
-											className="hero-stat-val"
-											data-target={target}
-											data-suffix={suffix}
-										>
-											0
-										</div>
-										<div className="hero-stat-lbl">{label}</div>
+										<div className="hero-stat-val" data-target={target} data-suffix={suffix}>0</div>
+										<div className="hero-stat-lbl">{t(`hero.${key}`)}</div>
 									</div>
 								))}
 							</div>
@@ -308,7 +253,7 @@ export default function Hero() {
 										d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
 									/>
 								</svg>
-								093 170 79 89
+								{t('hero.phone')}
 							</div>
 
 							<div
@@ -347,7 +292,7 @@ export default function Hero() {
 											color: "#fff",
 										}}
 									>
-										Анонимное лечение
+										{t('hero.anonymousTitle')}
 									</div>
 									<div
 										style={{
@@ -356,7 +301,7 @@ export default function Hero() {
 											marginTop: 2,
 										}}
 									>
-										Конфиденциальность гарантирована
+										{t('hero.anonymousSub')}
 									</div>
 								</div>
 							</div>
@@ -365,10 +310,8 @@ export default function Hero() {
 				</div>
 			</div>
 			<div className="scroll-ind">
-				<div className="scroll-mouse">
-					<div className="scroll-wheel"></div>
-				</div>
-				<span className="scroll-lbl">Прокрутить</span>
+				<div className="scroll-mouse"><div className="scroll-wheel"></div></div>
+				<span className="scroll-lbl">{t('hero.scroll')}</span>
 			</div>
 		</section>
 	);

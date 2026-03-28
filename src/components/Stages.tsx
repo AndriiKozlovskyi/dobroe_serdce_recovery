@@ -1,70 +1,44 @@
+import { useTranslation } from "react-i18next";
+
 export default function Stages() {
+	const { t } = useTranslation();
+
+	const stages = [
+		{ emoji: "🧪", num: "1", title: t('stages.stage1Title'), desc: t('stages.stage1Desc'), dur: t('stages.stage1Dur') },
+		{ emoji: "🧬", num: "2", title: t('stages.stage2Title'), desc: t('stages.stage2Desc'), dur: t('stages.stage2Dur') },
+		{ emoji: "🌱", num: "3", title: t('stages.stage3Title'), desc: t('stages.stage3Desc'), dur: t('stages.stage3Dur') },
+		{ emoji: "♾️", num: "4", title: t('stages.stage4Title'), desc: t('stages.stage4Desc'), dur: t('stages.stage4Dur') },
+	];
+
 	return (
-		<>
-			<section id="stages" className="section">
-				<div className="container" style={{ position: "relative" }}>
-					<div className="section-head">
-						<div className="reveal">
-							<span
-								className="eyebrow"
-								style={{ color: "rgba(249,189,21,.8)" }}
-							>
-								Как мы работаем
-							</span>
-						</div>
-						<h2 className="section-title on-dark reveal d-1">
-							Этапы лечения зависимостей
-						</h2>
-						<p className="section-sub on-dark reveal d-2">
-							Каждый этап выстроен так, чтобы обеспечить максимально мягкое и
-							эффективное выздоровление
-						</p>
+		<section id="stages" className="section">
+			<div className="container" style={{ position: "relative" }}>
+				<div className="section-head">
+					<div className="reveal">
+						<span className="eyebrow" style={{ color: "rgba(249,189,21,.8)" }}>
+							{t('stages.eyebrow')}
+						</span>
 					</div>
-					<div className="stages-grid" style={{ position: "relative" }}>
-						<div className="stages-line"></div>
-						<div className="stage-card reveal d-1">
-							<div className="stage-orb">🧪</div>
-							<div className="stage-num">1</div>
-							<div className="stage-title">Детоксикация</div>
-							<p className="stage-desc">
-								Очищение организма от вредных веществ под контролем специалистов
-								с медикаментозной поддержкой для снятия симптомов отмены
-							</p>
-							<span className="stage-dur">5–14 дней</span>
-						</div>
-						<div className="stage-card reveal d-2">
-							<div className="stage-orb">🧬</div>
-							<div className="stage-num">2</div>
-							<div className="stage-title">Реабилитация</div>
-							<p className="stage-desc">
-								Комплексный подход с индивидуальными и групповыми
-								терапевтическими сессиями. Работа с психологами и наркологами
-							</p>
-							<span className="stage-dur">1–3 месяца</span>
-						</div>
-						<div className="stage-card reveal d-3">
-							<div className="stage-orb">🌱</div>
-							<div className="stage-num">3</div>
-							<div className="stage-title">Социальная адаптация</div>
-							<p className="stage-desc">
-								Развитие жизненных навыков, построение здоровых отношений и
-								подготовка к самостоятельной трезвой жизни
-							</p>
-							<span className="stage-dur">3–6 месяцев</span>
-						</div>
-						<div className="stage-card reveal d-4">
-							<div className="stage-orb">♾️</div>
-							<div className="stage-num">4</div>
-							<div className="stage-title">Постреабилитация</div>
-							<p className="stage-desc">
-								Регулярные встречи с терапевтом, группы поддержки и программы
-								для предотвращения рецидива на долгосрочной основе
-							</p>
-							<span className="stage-dur">Постоянно</span>
-						</div>
-					</div>
+					<h2 className="section-title on-dark reveal d-1">
+						{t('stages.title')}
+					</h2>
+					<p className="section-sub on-dark reveal d-2">
+						{t('stages.subtitle')}
+					</p>
 				</div>
-			</section>
-		</>
+				<div className="stages-grid" style={{ position: "relative" }}>
+					<div className="stages-line"></div>
+					{stages.map((stage, i) => (
+						<div key={i} className={`stage-card reveal d-${i + 1}`}>
+							<div className="stage-orb">{stage.emoji}</div>
+							<div className="stage-num">{stage.num}</div>
+							<div className="stage-title">{stage.title}</div>
+							<p className="stage-desc">{stage.desc}</p>
+							<span className="stage-dur">{stage.dur}</span>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
 	);
 }

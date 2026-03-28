@@ -1,6 +1,9 @@
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
+	const { i18n, t } = useTranslation();
+
 	useEffect(() => {
 		const nav = document.getElementById("nav");
 		const btt = document.getElementById("btt");
@@ -36,36 +39,42 @@ export default function Header() {
 		document.body.style.overflow = "";
 	}
 
+	function toggleLanguage() {
+		const newLang = i18n.language === 'ru' ? 'kz' : 'ru';
+		i18n.changeLanguage(newLang);
+		localStorage.setItem('language', newLang);
+	}
+
 	return (
 		<>
-			<button id="btt" aria-label="Наверх">
+			<button id="btt" aria-label={t('header.topButton')}>
 				↑
 			</button>
 			<div className="mobile-menu" id="mobileMenu">
 				<a href="#hero" onClick={closeMobile}>
-					Главная
+					{t('header.home')}
 				</a>
 				<a href="#services" onClick={closeMobile}>
-					Услуги
+					{t('header.services')}
 				</a>
 				<a href="#about" onClick={closeMobile}>
-					О нас
+					{t('header.about')}
 				</a>
 				<a href="#team" onClick={closeMobile}>
-					Специалисты
+					{t('header.team')}
 				</a>
 				<a href="#testi" onClick={closeMobile}>
-					Отзывы
+					{t('header.testimonials')}
 				</a>
 				<a href="#contact" onClick={closeMobile}>
-					Контакты
+					{t('header.contacts')}
 				</a>
 				<a
 					href="tel:+380931707989"
 					className="btn btn-gold btn-sm"
 					style={{ marginTop: "1rem" }}
 				>
-					093 170 79 89
+					{t('header.phone')}
 				</a>
 			</div>
 			<nav id="nav">
@@ -74,30 +83,38 @@ export default function Header() {
 						<span className="nav-logo-text">
 							<span className="text-gold">RE</span>COVERY
 						</span>
-						<span className="nav-logo-sub">Клиника восстановления</span>
+						<span className="nav-logo-sub">{t('header.clinic')}</span>
 					</a>
 					<div className="nav-links">
 						<a href="#services" className="nav-link">
-							Услуги
+							{t('header.services')}
 						</a>
 						<a href="#about" className="nav-link">
-							О нас
+							{t('header.about')}
 						</a>
 						<a href="#stages" className="nav-link">
-							Лечение
+							{t('header.treatment')}
 						</a>
 						<a href="#team" className="nav-link">
-							Специалисты
+							{t('header.team')}
 						</a>
 						<a href="#testi" className="nav-link">
-							Отзывы
+							{t('header.testimonials')}
 						</a>
 						<a href="#faq" className="nav-link">
-							FAQ
+							{t('header.faq')}
 						</a>
 						<a href="#contact" className="nav-link">
-							Контакты
+							{t('header.contacts')}
 						</a>
+						<button
+							onClick={toggleLanguage}
+							className="lang-switcher"
+							aria-label="Переключить язык"
+							title={i18n.language === 'ru' ? 'Қазақша' : 'Русский'}
+						>
+							{i18n.language === 'ru' ? 'KZ' : 'RU'}
+						</button>
 					</div>
 					<a href="tel:+380931707989" className="btn btn-gold btn-sm nav-cta">
 						<svg
@@ -114,13 +131,13 @@ export default function Header() {
 								d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
 							/>
 						</svg>
-						093 170 79 89
+						{t('header.phone')}
 					</a>
 					<button
 						className="hamburger"
 						id="hamburger"
 						onClick={toggleMobile}
-						aria-label="Меню"
+						aria-label={t('header.menuLabel')}
 					>
 						<span></span>
 						<span></span>
