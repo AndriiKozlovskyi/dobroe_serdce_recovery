@@ -18,64 +18,106 @@ export default function About() {
 				<div className="about-grid">
 					<div className="about-visual reveal-l">
 						<div className="about-img-main">
-							<div className="about-img-bg" style={{ justifyContent: "flex-start", gap: "1.5rem" }}>
-								{/* Header */}
-								<div>
-									<div style={{ fontSize: ".6rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(249,189,21,.6)", marginBottom: ".4rem" }}>
-										Центр Recovery · Астана
-									</div>
-									<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.6rem", fontWeight: 700, color: "#fff", lineHeight: 1.1 }}>
-										{t('about.yearsTitle')}
-										<br />
-										<span style={{ fontSize: "1rem", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
-											{t('about.yearsSub')}
-										</span>
+							<div className="about-img-bg" style={{ justifyContent: "flex-start", gap: "2rem", position: "relative" }}>
+								{/* Medical Header */}
+								<div style={{ display: "flex", alignItems: "center", gap: "1rem", paddingBottom: "1rem", borderBottom: "1px solid rgba(249,189,21,.2)" }}>
+									<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(249,189,21,0.9)" strokeWidth="2">
+										<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+										<path d="M12 8v8M16 12H8"/>
+									</svg>
+									<div>
+										<div style={{ fontSize: ".55rem", letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(249,189,21,.7)" }}>
+											Центр Recovery · Астана
+										</div>
+										<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", fontWeight: 700, color: "#fff" }}>
+											{t('about.yearsTitle')}
+										</div>
 									</div>
 								</div>
 
-								{/* Stats row */}
-								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: ".75rem" }}>
+								{/* Core Metrics Grid */}
+								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
 									{[
-										{ val: "11K+", lbl: t('about.stat1') },
-										{ val: "96%", lbl: t('about.stat2') },
-										{ val: "24/7", lbl: t('about.stat3') },
-									].map(({ val, lbl }) => (
-										<div key={lbl} style={{ background: "rgba(255,255,255,.06)", border: "1px solid rgba(249,189,21,.12)", borderRadius: ".9rem", padding: ".85rem .6rem", textAlign: "center" }}>
-											<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.3rem", fontWeight: 700, color: "var(--brand-400)", lineHeight: 1 }}>
+										{ val: "11K+", lbl: t('about.stat1'), icon: "👥", color: "#4ade80" },
+										{ val: "96%", lbl: t('about.stat2'), icon: "✓", color: "var(--brand-500)" },
+										{ val: "24/7", lbl: t('about.stat3'), icon: "🏥", color: "#60a5fa" },
+										{ val: "50+", lbl: "Врачей", icon: "👨‍⚕️", color: "var(--sap-400)" },
+									].map(({ val, lbl, icon, color }) => (
+										<div key={lbl} style={{ 
+											background: "rgba(255,255,255,.08)", 
+											border: `1.5px solid ${color}22`, 
+											borderRadius: "1.2rem", 
+											padding: "1.2rem .9rem", 
+											textAlign: "center",
+											transition: "all 0.3s ease",
+											cursor: "pointer",
+											position: "relative",
+											overflow: "hidden"
+										}}
+										onMouseEnter={(e) => {
+											e.currentTarget.style.background = `${color}15`;
+											e.currentTarget.style.borderColor = `${color}44`;
+											e.currentTarget.style.transform = "translateY(-4px)";
+										}}
+										onMouseLeave={(e) => {
+											e.currentTarget.style.background = "rgba(255,255,255,.08)";
+											e.currentTarget.style.borderColor = `${color}22`;
+											e.currentTarget.style.transform = "translateY(0)";
+										}}>
+											<div style={{ fontSize: "1.8rem", marginBottom: ".4rem" }}>
+												{icon}
+											</div>
+											<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.4rem", fontWeight: 700, color: color, lineHeight: 1 }}>
 												{val}
 											</div>
-											<div style={{ fontSize: ".58rem", color: "rgba(255,255,255,.38)", marginTop: "4px", letterSpacing: ".08em", textTransform: "uppercase" }}>
+											<div style={{ fontSize: ".55rem", color: "rgba(255,255,255,.45)", marginTop: ".5rem", letterSpacing: ".08em", textTransform: "uppercase", fontWeight: 500 }}>
 												{lbl}
 											</div>
 										</div>
 									))}
 								</div>
-
-								{/* Heartbeat SVG line */}
-								<div style={{ padding: ".5rem 0" }}>
-									<div style={{ fontSize: ".58rem", color: "rgba(255,255,255,.3)", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: ".5rem" }}>
-										{t('about.monitoring')}
+								{/* Animated Heartbeat */}
+								<div style={{ paddingTop: ".5rem" }}>
+									<div style={{ fontSize: ".55rem", color: "rgba(255,255,255,.4)", letterSpacing: ".12em", textTransform: "uppercase", marginBottom: ".6rem", fontWeight: 600 }}>
+										Мониторинг здоровья
 									</div>
-									<svg viewBox="0 0 260 48" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%" }}>
-										<polyline points="0,24 30,24 40,8 50,38 60,18 70,28 80,24 120,24 130,4 140,42 150,14 160,32 170,24 260,24" stroke="rgba(249,189,21,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-										<circle cx="170" cy="24" r="3" fill="var(--brand-500)" opacity=".9">
-											<animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite" />
+									<svg viewBox="0 0 300 50" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", filter: "drop-shadow(0 0 8px rgba(249,189,21,0.3))" }}>
+										<defs>
+											<linearGradient id="beatGrad" x1="0%" y1="0%" x2="100%">
+												<stop offset="0%" style={{ stopColor: "rgba(249,189,21,0.3)", stopOpacity: 1 }} />
+												<stop offset="50%" style={{ stopColor: "rgba(249,189,21,0.9)", stopOpacity: 1 }} />
+												<stop offset="100%" style={{ stopColor: "rgba(249,189,21,0.3)", stopOpacity: 1 }} />
+											</linearGradient>
+										</defs>
+										<polyline points="0,25 20,25 25,10 30,40 35,20 40,28 45,25 80,25 85,8 92,45 100,15 110,35 120,25 300,25" stroke="url(#beatGrad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+										<circle cx="120" cy="25" r="4" fill="rgba(249,189,21,0.9)">
+											<animate attributeName="r" values="4;7;4" dur="1.2s" repeatCount="indefinite" />
+											<animate attributeName="opacity" values="0.9;0.3;0.9" dur="1.2s" repeatCount="indefinite" />
 										</circle>
 									</svg>
 								</div>
 
-								{/* Status pills */}
-								<div style={{ display: "flex", flexDirection: "column", gap: ".6rem" }}>
+								{/* Certifications & Trust */}
+								<div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: ".7rem", paddingTop: "0rem" }}>
 									{[
-										{ dot: "#4ade80", label: t('about.accepting') },
-										{ dot: "var(--brand-500)", label: t('about.anonymity') },
-										{ dot: "var(--sap-400)", label: t('about.license') },
-									].map(({ dot, label }) => (
-										<div key={label} style={{ display: "flex", alignItems: "center", gap: ".6rem" }}>
-											<div style={{ width: 7, height: 7, borderRadius: "50%", background: dot, flexShrink: 0 }}></div>
-											<div style={{ fontSize: ".75rem", color: "rgba(255,255,255,.52)", fontWeight: 300 }}>
-												{label}
-											</div>
+										{ badge: "🔒", label: "Анонимность", color: "#4ade80" },
+										{ badge: "⚖️", label: "Лицензия", color: "var(--sap-400)" },
+										{ badge: "✅", label: "Сертифика", color: "var(--brand-500)" },
+									].map(({ badge, label, color }) => (
+										<div key={label} style={{
+											display: "flex",
+											flexDirection: "column",
+											alignItems: "center",
+											gap: ".4rem",
+											padding: ".8rem .6rem",
+											background: "rgba(255,255,255,.05)",
+											border: `1px solid ${color}33`,
+											borderRadius: "1rem",
+											fontSize: ".58rem",
+											color: "rgba(255,255,255,.6)"
+										}}>
+											<div style={{ fontSize: "1.5rem" }}>{badge}</div>
+											{label}
 										</div>
 									))}
 								</div>
