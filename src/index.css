@@ -2006,7 +2006,7 @@ a.contact-val:hover { color: var(--sap-600); }
 ═══════════════════════════════════════════════════ */
 @media (max-width: 1024px) {
 	/* Layout resets */
-	.hero-grid { grid-template-columns: 1fr; }
+	.hero-grid { grid-template-columns: 1fr; text-align: center; }
 	.hero-right { display: none; }
 	.about-grid { grid-template-columns: 1fr; }
 	.detox-grid { grid-template-columns: 1fr; }
