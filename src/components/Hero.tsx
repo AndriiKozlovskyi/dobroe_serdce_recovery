@@ -198,7 +198,6 @@ export default function Hero() {
 						<div className="hero-trust">
 							<div className="hero-trust-item"><span className="ico">🔒</span>{t('hero.trust1')}</div>
 							<div className="hero-trust-item"><span className="ico">⚡</span>{t('hero.trust2')}</div>
-							<div className="hero-trust-item"><span className="ico">🏥</span>{t('hero.trust3')}</div>
 						</div>
 					</div>
 
