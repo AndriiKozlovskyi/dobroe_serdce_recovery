@@ -54,7 +54,7 @@ export default function Header() {
 				<div className="mobile-menu-header">
 					<a href="#hero" className="mobile-menu-logo">
 						<span className="mobile-menu-logo-text">
-							<span className="text-gold">RE</span>COVERY
+							<span className="text-gold">FREE</span>DOM
 						</span>
 					</a>
 				</div>
@@ -118,7 +118,7 @@ export default function Header() {
 				<div className="nav-inner">
 					<a href="#hero" className="nav-logo">
 						<span className="nav-logo-text">
-							<span className="text-gold">RE</span>COVERY
+							<span className="text-gold">FREE</span>DOM
 						</span>
 						<span className="nav-logo-sub">{t('header.clinic')}</span>
 					</a>

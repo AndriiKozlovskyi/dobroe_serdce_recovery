@@ -9,7 +9,7 @@ export default function Footer() {
 				<div className="footer-grid">
 					<div>
 						<div className="footer-brand-name">
-							<span className="text-gold">RE</span>COVERY
+							<span className="text-gold">FREE</span>DOM
 						</div>
 						<div className="footer-brand-sub">{t('footer.brandSub')}</div>
 						<p className="footer-brand-desc">{t('footer.brandDesc')}</p>
