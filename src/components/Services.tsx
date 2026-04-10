@@ -1,31 +1,37 @@
 import { useTranslation } from "react-i18next";
+import alcoholImg from "../assets/services/alcohol.jpg";
+import drugsImg from "../assets/services/drugs.jpg";
+import mentalImg from "../assets/services/mental.jpg";
+import gamblingImg from "../assets/services/gambling.jpg";
+import rehabImg from "../assets/services/rehab.jpg";
+import homeImg from "../assets/services/home.jpg";
 
 export default function Services() {
 	const { t } = useTranslation();
 
 	const services = [
 		{
-			image: "/src/assets/services/alcohol.jpg",
+			image: alcoholImg,
 			title: t('services.alcohol'),
 		},
 		{
-			image: "/src/assets/services/drugs.jpg",
+			image: drugsImg,
 			title: t('services.drugs'),
 		},
 		{
-			image: "/src/assets/services/mental.jpg",
+			image: mentalImg,
 			title: t('services.gambling'),
 		},
 		{
-			image: "/src/assets/services/gambling.jpg",
+			image: gamblingImg,
 			title: t('services.mental'),
 		},
 		{
-			image: "/src/assets/services/rehab.jpg",
+			image: rehabImg,
 			title: t('services.rehab'),
 		},
 		{
-			image: "/src/assets/services/home.jpg",
+			image: homeImg,
 			title: t('services.home'),
 		},
 	];
