@@ -793,6 +793,7 @@ textarea.input { resize: none; min-height: 120px; }
 	flex-direction: column;
 	gap: 0.5rem;
 	padding: clamp(0.75rem, 3vw, 1.25rem) clamp(0.75rem, 3vw, 1.25rem);
+	margin-top: 1rem;
 	flex: 1;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
