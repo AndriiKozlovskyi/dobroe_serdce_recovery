@@ -5,40 +5,28 @@ export default function Services() {
 
 	const services = [
 		{
-			icon: "🍷",
+			image: "/src/assets/services/alcohol.jpg",
 			title: t('services.alcohol'),
-			desc: t('services.alcoholDesc'),
-			price: t('services.alcoholPrice'),
 		},
 		{
-			icon: "💉",
+			image: "/src/assets/services/drugs.jpg",
 			title: t('services.drugs'),
-			desc: t('services.drugsDesc'),
-			price: t('services.drugsPrice'),
 		},
 		{
-			icon: "🎰",
+			image: "/src/assets/services/mental.jpg",
 			title: t('services.gambling'),
-			desc: t('services.gamblingDesc'),
-			price: t('services.gamblingPrice'),
 		},
 		{
-			icon: "🧠",
+			image: "/src/assets/services/gambling.jpg",
 			title: t('services.mental'),
-			desc: t('services.mentalDesc'),
-			price: t('services.mentalPrice'),
 		},
 		{
-			icon: "💪",
+			image: "/src/assets/services/rehab.jpg",
 			title: t('services.rehab'),
-			desc: t('services.rehabDesc'),
-			price: t('services.rehabPrice'),
 		},
 		{
-			icon: "🏠",
+			image: "/src/assets/services/home.jpg",
 			title: t('services.home'),
-			desc: t('services.homeDesc'),
-			price: t('services.homePrice'),
 		},
 	];
 
@@ -61,15 +49,8 @@ export default function Services() {
 				<div className="services-grid">
 					{services.map((service, i) => (
 						<div key={i} className={`srv-card reveal d-${(i % 3) + 1}`}>
-							<div className="srv-inner">
-								<div className="srv-icon-wrap">{service.icon}</div>
-								<h3 className="srv-title">{service.title}</h3>
-								<p className="srv-desc">{service.desc}</p>
-								<div className="srv-footer">
-									<span className="srv-price">{service.price}</span>
-									<span className="srv-arrow">→</span>
-								</div>
-							</div>
+							<img src={service.image} alt={service.title} className="srv-image" />
+							<h3 className="srv-title">{service.title}</h3>
 						</div>
 					))}
 				</div>
