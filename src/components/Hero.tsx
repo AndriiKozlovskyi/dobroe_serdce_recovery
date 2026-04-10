@@ -211,31 +211,6 @@ export default function Hero() {
 							<div className="hero-trust-item"><span className="ico">⚡</span>{t('hero.trust2')}</div>
 						</div>
 					</div>
-
-					<div className="hero-right">
-						<div className="hero-card-main glass-dark">
-							<div style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.35rem", fontWeight: 600, color: "#fff", marginBottom: ".4rem" }}>
-								{t('hero.program')}
-							</div>
-							<p style={{ fontSize: ".84rem", color: "rgba(255, 255, 255, 0.7)", fontWeight: 300, lineHeight: 1.6, marginBottom: 0 }}>
-								{t('hero.programDesc')}
-							</p>
-
-							<div className="hero-stats-grid" ref={statsRef}>
-								{[
-									{ target: 21, suffix: "", key: 'stat1' },
-									{ target: 11, suffix: "K+", key: 'stat2' },
-									{ target: 21, suffix: "", key: 'stat3' }
-								].map(({ target, suffix, key }, i) => (
-									<div key={i} className="hero-stat-box">
-										<div className="hero-stat-val" data-target={target} data-suffix={suffix}>0</div>
-										<div className="hero-stat-lbl">{t(`hero.${key}`)}</div>
-									</div>
-								))}
-							</div>
-						</div>
-						
-					</div>
 				</div>
 			</div>
 			<div className="scroll-ind">

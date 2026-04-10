@@ -912,12 +912,20 @@ textarea.input { resize: none; min-height: 120px; }
 	pointer-events: none;
 }
 .hero-grid {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+	display: flex;
+	flex-direction: column;
 	gap: clamp(2rem,5vw,4rem);
 	align-items: center;
+	justify-items: center;
 	padding: clamp(2rem,5vw,3rem) 0;
 	width: 100%;
+	text-align: center;
+}
+.hero-grid > div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #hero .container { position: relative; z-index: 2; }
 
@@ -968,7 +976,7 @@ textarea.input { resize: none; min-height: 120px; }
 	line-height: 1.82;
 	font-weight: 300;
 	max-width: 520px;
-	margin-bottom: 2.5rem;
+	margin: 0 auto 2.5rem;
 	animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.3s both;
 }
 .hero-ctas {
@@ -977,12 +985,14 @@ textarea.input { resize: none; min-height: 120px; }
 	flex-wrap: wrap;
 	margin-bottom: 3rem;
 	animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+	justify-content: center;
 }
 .hero-trust {
 	display: flex;
 	gap: clamp(1rem,3vw,2rem);
 	flex-wrap: wrap;
 	animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.5s both;
+	justify-content: center;
 }
 .hero-trust-item {
 	display: flex;
@@ -995,7 +1005,7 @@ textarea.input { resize: none; min-height: 120px; }
 }
 .hero-trust-item .ico { font-size: 1rem; }
 
-.hero-right    { position: relative; height: auto; }
+.hero-right    { position: relative; height: auto; display: none; }
 .hero-card-main {
 	position: relative;
 	border-radius: 2rem;
