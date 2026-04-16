@@ -1169,12 +1169,12 @@ textarea.input { resize: none; min-height: 120px; }
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
-	font-size: var(--text-xs);
+	font-size: var(--text-lg);
 	color: rgba(255,255,255,1);
 	font-weight: 400;
 	letter-spacing: 0.05em;
 }
-.hero-trust-item .ico { font-size: 1rem; }
+.hero-trust-item .ico { font-size: 1.4rem; }
 
 .hero-right    { position: relative; height: auto; display: none; }
 .hero-card-main {
