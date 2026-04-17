@@ -10,6 +10,7 @@ import Methods from "./components/Methods";
 import Services from "./components/Services";
 import Stages from "./components/Stages";
 import Stats from "./components/Stats";
+import AboutGallery from "./components/AboutGallery";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
 import Certificates from "./components/Certificates";
@@ -92,6 +93,7 @@ export default function App() {
 			<main>
 				<Hero />
 				<Stats />
+				<AboutGallery />
 				<Services />
 				<Certificates />
 				<About />
