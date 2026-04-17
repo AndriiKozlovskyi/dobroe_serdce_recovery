@@ -28,7 +28,7 @@ export default function Contacts() {
 								<div className="contact-ico-wrap">📞</div>
 								<div>
 									<div className="contact-lbl">{t('contacts.phone')}</div>
-									<a href="tel:+380931707989" className="contact-val">
+									<a href="tel:+77788100900" className="contact-val">
 										{t('contacts.phoneVal')}
 									</a>
 								</div>

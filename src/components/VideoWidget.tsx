@@ -5,9 +5,9 @@ export default function VideoWidget() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const thumbSrc =
-    "https://kinescope.io/embed/v4FeVNZwyDJ2Ph9p8tT7hA?behavior[autoPlay]=true&behavior[loop]=true&behavior[muted]=true";
+    "https://kinescope.io/embed/v4FeVNZwyDJ2Ph9p8tT7hA?autoplay=1&loop=1&muted=1&controls=0&playsinline=1";
   const expandedSrc =
-    "https://kinescope.io/embed/v4FeVNZwyDJ2Ph9p8tT7hA?behavior[autoPlay]=true&behavior[muted]=false";
+    "https://kinescope.io/embed/v4FeVNZwyDJ2Ph9p8tT7hA?autoplay=1&muted=0";
 
   return (
     <>
@@ -24,16 +24,6 @@ export default function VideoWidget() {
               allowFullScreen
               style={{ borderRadius: "12px", pointerEvents: "none" }}
             />
-            <div className="video-widget__play-overlay">
-              <svg width="48" height="48" viewBox="0 0 130 130" fill="none">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M65 130c35.899 0 65-29.101 65-65 0-35.898-29.101-65-65-65C29.102 0 0 29.102 0 65c0 35.899 29.102 65 65 65zm23.991-65.509L52.901 42.6v43.784l36.09-21.892z"
-                  fill="#fff"
-                />
-              </svg>
-            </div>
           </div>
         )}
 
