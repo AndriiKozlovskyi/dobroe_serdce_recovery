@@ -272,16 +272,16 @@
     "eyebrow": "Біз байланыс",
     "title": "Жаңа өмірге\nбіріншісінді қадам ата",
     "address": "Мекен-жайы",
-    "addressVal": "Астана қаласы, просп. Республики 34",
+    "addressVal": "Астана қ., Еділ көшесі, 20",
     "phone": "Телефон",
     "phoneVal": "+7 778 810 09 00",
     "email": "Email",
     "emailVal": "crmrenessans1@gmail.com",
     "hours": "Жұмыс сағаты",
     "hoursVal": "Сәрсең, 24 сағат",
-    "telegram": "✈ Telegram",
-    "viber": "📱 Viber",
-    "whatsapp": "💬 WhatsApp"
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "brandSub": "Қалпына келтіру клиникасы",

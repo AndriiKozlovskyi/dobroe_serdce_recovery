@@ -274,16 +274,16 @@
     "eyebrow": "Связаться с нами",
     "title": "Сделайте первый шаг\nк новой жизни",
     "address": "Адрес",
-    "addressVal": "г. Астана, просп. Республики 34",
+    "addressVal": "г. Астана, Улица Едил, 20",
     "phone": "Телефон",
     "phoneVal": "+7 778 810 09 00",
     "email": "Email",
     "emailVal": "crmrenessans1@gmail.com",
     "hours": "Режим работы",
     "hoursVal": "Ежедневно, круглосуточно",
-    "telegram": "✈ Telegram",
-    "viber": "📱 Viber",
-    "whatsapp": "💬 WhatsApp"
+    "telegram": "Telegram",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "brandSub": "Клиника восстановления",
