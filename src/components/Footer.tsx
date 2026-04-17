@@ -38,7 +38,7 @@ export default function Footer() {
 						<div className="footer-col-title">{t('footer.contactsTitle')}</div>
 						<a href="tel:+77788100900" className="footer-phone">+7 778 810 09 00</a>
 						<a href="mailto:crmrenessans1@gmail.com" className="footer-email">crmrenessans1@gmail.com</a>
-						<div className="footer-addr"> г. Астана, просп. Республики 34</div>
+						<div className="footer-addr"> г. Астана, Улица Едил, 20</div>
 					</div>
 				</div>
 				<div className="footer-bottom">
