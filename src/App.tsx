@@ -21,10 +21,40 @@ import "./index.css";
 
 export default function App() {
 	const [languageSelected, setLanguageSelected] = useState(false);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
 
-	const handleLanguageSelect = () => {
-		setLanguageSelected(true);
-	};
+
+		const handleLanguageSelect = () => {
+			setLanguageSelected(true);
+		};
+
+		// Detect mobile
+		useEffect(() => {
+			const checkMobile = () => {
+				setIsMobile(window.innerWidth <= 900);
+			};
+			checkMobile();
+			window.addEventListener("resize", checkMobile);
+			return () => window.removeEventListener("resize", checkMobile);
+		}, []);
+
+		// Listen for mobile menu open/close
+		useEffect(() => {
+			if (!isMobile) {
+				setIsMobileMenuOpen(false);
+				return;
+			}
+			const menu = document.getElementById("mobileMenu");
+			if (!menu) return;
+			const observer = new MutationObserver(() => {
+				setIsMobileMenuOpen(menu.classList.contains("open"));
+			});
+			observer.observe(menu, { attributes: true, attributeFilter: ["class"] });
+			// Initial state
+			setIsMobileMenuOpen(menu.classList.contains("open"));
+			return () => observer.disconnect();
+		}, [isMobile, languageSelected]);
 
 	useEffect(() => {
 		// Scroll reveal
@@ -88,7 +118,7 @@ export default function App() {
 
 	return languageSelected ? (
 		<div className="app">
-			<VideoWidget />
+			{!(isMobile && isMobileMenuOpen) && <VideoWidget />}
 			<Header />
 			<main>
 				<Hero />
