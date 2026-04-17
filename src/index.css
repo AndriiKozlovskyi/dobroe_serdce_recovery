@@ -1,5 +1,103 @@
 @import "tailwindcss";
 
+/* ── Video Widget ── */
+.video-widget {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	z-index: 9999;
+	transition: all 0.3s ease;
+}
+
+.video-widget__thumb {
+	position: relative;
+	width: 125px;
+	aspect-ratio: 9 / 16;
+	border-radius: 12px;
+	overflow: hidden;
+	cursor: pointer;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-widget__play-overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.25);
+	transition: background 0.2s;
+}
+
+.video-widget__thumb:hover .video-widget__play-overlay {
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.video-widget__close {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 12px;
+	cursor: pointer;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s;
+}
+
+.video-widget__close:hover {
+	background: rgba(0, 0, 0, 0.85);
+}
+
+.video-widget--expanded {
+	bottom: 20px;
+	left: 20px;
+}
+
+.video-widget__expanded {
+	position: relative;
+	width: 280px;
+	aspect-ratio: 9 / 16;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.video-widget__collapse {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
+	border: none;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.video-widget__collapse:hover {
+	background: rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 640px) {
+	.video-widget__expanded {
+		width: 220px;
+	}
+}
+
 *,
 *::before,
 *::after {
@@ -437,7 +535,6 @@ body {
 }
 .cert-title {
 	font-size: clamp(1.5rem, 3vw, 2rem);
-	
 	font-weight: 700;
 	color: #fff;
 	line-height: 1.2;
