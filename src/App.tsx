@@ -12,6 +12,7 @@ import Stages from "./components/Stages";
 import Stats from "./components/Stats";
 import Team from "./components/Team";
 import Testimonials from "./components/Testimonials";
+import Certificates from "./components/Certificates";
 import DetoxAccordion from "./components/DetoxAccordion";
 import LanguageSelector from "./components/LanguageSelector";
 import "./index.css";
@@ -90,6 +91,7 @@ export default function App() {
 				<Hero />
 				<Stats />
 				<Services />
+				<Certificates />
 				<About />
 				<Stages />
 				<Methods />
