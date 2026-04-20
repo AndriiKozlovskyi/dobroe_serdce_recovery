@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 export default function Stages() {
+	
 	const { t } = useTranslation();
 
 	const stages = [
