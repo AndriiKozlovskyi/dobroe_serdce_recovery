@@ -1325,11 +1325,7 @@ textarea.input { resize: none; min-height: 120px; }
 	position: absolute;
 	inset: 0;
 	z-index: 1;
-	background:
-		radial-gradient(ellipse 80% 60% at 70% 50%, rgba(12,177,149,0.06) 0%, transparent 5%),
-		radial-gradient(ellipse 55% 50% at 15% 85%, rgba(255,255,255,0.025) 0%, transparent 5%),
-		radial-gradient(ellipse 65% 80% at 0% 15%, rgba(99,200,255,0.06) 0%, transparent 60%),
-		linear-gradient(165deg, rgba(1,12,50,0.6) 0%, rgba(54,140,188,0.3) 55%, rgba(1,12,50,0.6) 100%);
+
 	pointer-events: none;
 }
 .hero-blob-1 {
@@ -2184,7 +2180,8 @@ textarea.input { resize: none; min-height: 120px; }
 }
 .team-cta { margin-top: 3rem; }
 @media (max-width: 768px) {
-	.team-cta { margin-top: 9rem; }
+	.team-grid { height: auto; }
+	.team-cta { margin-top: 2rem; }
 }
 .team-info    { padding: clamp(0.9rem,2vw,1.3rem); height: 6.5rem; display: flex; flex-direction: column; justify-content: center; }
 @media (max-width: 768px) {

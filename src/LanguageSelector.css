@@ -37,6 +37,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 20;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .ls__nav-logo {
@@ -59,6 +60,8 @@
   line-height: 1;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: linear-gradient(90deg, #0cb195 0%, #0cb195 25%, #368cbc 45%, #368cbc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -541,6 +544,7 @@
   .ls__nav {
     min-height: 64px;
     position: fixed;
+    overflow: visible;
   }
 
   .ls__nav-menu {
@@ -557,6 +561,15 @@
 
   .ls__mobile-menu {
     display: flex;
+  }
+
+  .ls__nav-logo-img {
+    max-width: 44px;
+    width: 44px;
+  }
+
+  .ls__nav-logo-text {
+    font-size: 17px;
   }
 }
 

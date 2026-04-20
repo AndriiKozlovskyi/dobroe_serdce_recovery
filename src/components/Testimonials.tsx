@@ -28,6 +28,20 @@ export default function Testimonials() {
 			age: t('testimonials.testi3Age'),
 			r: 5,
 		},
+		{
+			text: t('testimonials.testi4'),
+			name: t('testimonials.testi4Name'),
+			city: t('testimonials.testi4City'),
+			age: t('testimonials.testi4Age'),
+			r: 5,
+		},
+		{
+			text: t('testimonials.testi5'),
+			name: t('testimonials.testi5Name'),
+			city: t('testimonials.testi5City'),
+			age: t('testimonials.testi5Age'),
+			r: 5,
+		},
 	];
 
 	const resetTimer = () => {
