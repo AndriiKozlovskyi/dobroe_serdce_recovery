@@ -89,7 +89,7 @@ export default function Team() {
 					<TeamCarouselCard startIndex={1} names={names} />
 					<TeamCarouselCard startIndex={2} names={names} />
 				</div>
-				<div style={{ textAlign: "center", marginTop: "3rem" }} className="reveal">
+				<div style={{ textAlign: "center" }} className="team-cta">
 					<a href="#contact" className="btn btn-primary">
 						{t('team.cta')}
 					</a>
