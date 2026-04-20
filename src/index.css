@@ -439,7 +439,7 @@ body {
 .btn-primary {
 	background: #368cbc;
 	color: #fff;
-	padding: 1rem 2.5rem;
+	padding: 1rem 4rem;
 	font-size: var(--text-sm);
 	box-shadow: 0 12px 40px rgba(54, 140, 188, 0.28);
 }
@@ -941,8 +941,9 @@ textarea.input { resize: none; min-height: 120px; }
 	display: none;
 	position: fixed;
 	top: 0; left: 0; right: 0; bottom: 0;
-	background: linear-gradient(180deg, #0d1f3c 0%, #1a3a5c 40%, #1e4d7b 70%, #0f2a4a 100%);
+	background: white;
 	backdrop-filter: blur(2px);
+	color: black;
 	z-index: 9998;
 	flex-direction: column;
 	overflow-y: auto;
@@ -978,14 +979,14 @@ textarea.input { resize: none; min-height: 120px; }
 
 .mobile-menu-header {
 	padding: clamp(1rem, 4vw, 1.5rem) clamp(1.25rem, 5vw, 2rem);
-	border-bottom: 1px solid rgba(12, 177, 149, 0.15);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-shrink: 0;
 	padding-top: calc(env(safe-area-inset-top, 0px) + clamp(1rem, 4vw, 1.5rem));
 	backdrop-filter: blur(8px);
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(255, 255, 255, 0.15);
 }
 .mobile-menu-logo {
 	text-decoration: none;
@@ -999,10 +1000,8 @@ textarea.input { resize: none; min-height: 120px; }
 	font-weight: 700;
 	line-height: 1;
 	letter-spacing: -0.01em;
-	background: linear-gradient(90deg, #0cb195 0%, #0cb195 45%, #63c8ff 45%, #63c8ff 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+	color: #000;
+	-webkit-text-fill-color: #000;
 	transition: transform 0.3s ease;
 }
 .mobile-menu-logo:hover .mobile-menu-logo-text {
@@ -1074,10 +1073,8 @@ textarea.input { resize: none; min-height: 120px; }
 	font-weight: 600;
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
-	background: linear-gradient(135deg, #0cb195, #63c8ff);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+	color: #000;
+	-webkit-text-fill-color: #000;
 	margin: 0;
 }
 
@@ -1106,8 +1103,8 @@ textarea.input { resize: none; min-height: 120px; }
 	min-height: clamp(56px, 10vw, 68px);
 	touch-action: manipulation;
 	border-radius: 1rem;
-	background: linear-gradient(135deg, rgba(12,177,149,0.05) 0%, rgba(99,200,255,0.03) 100%);
-	border: 1px solid rgba(12, 177, 149, 0.1);
+	background: rgba(255, 255, 255, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.35);
 	overflow: hidden;
 }
 .mobile-menu-link::before {
@@ -1147,13 +1144,13 @@ textarea.input { resize: none; min-height: 120px; }
 	font-family: "Cormorant Garamond", Georgia, serif;
 	font-size: clamp(0.95rem, 3.5vw, 1.1rem);
 	font-weight: 600;
-	color: rgba(255,255,255,0.85);
+	color: #000;
 	letter-spacing: -0.01em;
 	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 	flex: 1;
 }
 .mobile-menu-link:hover .menu-link-text {
-	color: #0cb195;
+	color: #1a6e8e;
 	font-size: clamp(0.97rem, 3.7vw, 1.13rem);
 }
 
@@ -1186,12 +1183,12 @@ textarea.input { resize: none; min-height: 120px; }
 	flex-direction: column;
 	gap: 1rem;
 	padding: clamp(1.25rem, 4vw, 1.75rem) clamp(1.25rem, 5vw, 2rem);
-	border-top: 1px solid rgba(12, 177, 149, 0.15);
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 	flex-shrink: 0;
 	position: relative;
 	z-index: 1;
 	backdrop-filter: blur(8px);
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.05);
 }
 
 .mobile-menu-phone {
@@ -1235,6 +1232,14 @@ textarea.input { resize: none; min-height: 120px; }
 .mobile-menu-phone:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 12px 48px rgba(12, 177, 149, 0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.mobile-menu-socials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 0.25rem;
 }
 
 .phone-icon {
