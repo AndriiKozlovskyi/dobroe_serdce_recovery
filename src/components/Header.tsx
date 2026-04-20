@@ -127,6 +127,20 @@ export default function Header() {
 					>
 						<span className="lang-text">{i18n.language === 'ru' ? 'Қазақша' : 'Русский язык'}</span>
 					</button>
+					<div className="mobile-menu-socials">
+						<a href="tel:87788100900" style={{ display: "inline-flex", flexShrink: 0 }}>
+							<img src="https://static.tildacdn.pro/tild3633-6333-4138-a264-663361613230/logopdf_8.png" alt="Phone" width="50" height="50" style={{ width: 50, height: 50, objectFit: "contain", display: "block" }} />
+						</a>
+						<a href="https://api.whatsapp.com/send/?phone=77788100900" target="_blank" rel="nofollow noopener noreferrer" style={{ display: "inline-flex", flexShrink: 0 }}>
+							<img src="https://static.tildacdn.pro/tild6162-6535-4562-b636-616564303634/logopdf_9.png" alt="WhatsApp" width="50" height="50" style={{ width: 50, height: 50, objectFit: "contain", display: "block" }} />
+						</a>
+						<a href="https://t.me/CZM_Freedom" target="_blank" rel="nofollow noopener noreferrer" style={{ display: "inline-flex", flexShrink: 0 }}>
+							<img src="https://static.tildacdn.pro/tild6537-6463-4436-a234-323061326563/logopdf_12.png" alt="Telegram" width="50" height="50" style={{ width: 50, height: 50, objectFit: "contain", display: "block" }} />
+						</a>
+						<a href="https://www.instagram.com/czmfreedom" target="_blank" rel="nofollow noopener noreferrer" style={{ display: "inline-flex", flexShrink: 0 }}>
+							<img src="https://static.tildacdn.pro/tild3530-6563-4563-a131-373232623933/logopdf_10.png" alt="Instagram" width="50" height="50" style={{ width: 50, height: 50, objectFit: "contain", display: "block" }} />
+						</a>
+					</div>
 				</div>
 			</div>
 
