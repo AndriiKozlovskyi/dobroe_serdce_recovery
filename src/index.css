@@ -9,6 +9,49 @@
 	transition: all 0.3s ease;
 }
 
+.about-video-widget-mobile {
+  display: flex !important;
+}
+
+.video-widget--inline {
+  position: static !important;
+  bottom: auto !important;
+  left: auto !important;
+  z-index: auto !important;
+}
+
+.about-video-widget-mobile {
+  display: none;
+}
+
+.video-widget--inline {
+  position: static !important;
+}
+
+.desktop-video-widget {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .desktop-video-widget {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .about-video-widget-mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-widget--floating {
+    display: none;
+  }
+}
+
 .video-widget__thumb {
 	position: relative;
 	width: 125px;
@@ -68,6 +111,31 @@
 	border-radius: 12px;
 	overflow: hidden;
 	box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.about-features-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.about-video-inline {
+  flex-shrink: 0;
+}
+
+.about-video-inline .video-widget--inline {
+  position: static !important;
+}
+
+.about-video-inline .video-widget__thumb {
+  width: 400px;
+}
+
+/* On desktop the video column doesn't exist so nothing to hide */
+@media (min-width: 601px) {
+  .about-video-inline {
+    display: none;
+  }
 }
 
 .video-widget__collapse {
@@ -2876,6 +2944,7 @@ a.contact-val:hover { color: #368cbc; }
 	grid-template-columns: 1fr 2fr 1fr;
 	gap: 1.5rem;
 	align-items: stretch;
+	justify-items: center;
 }
 
 .about-gallery-cards {

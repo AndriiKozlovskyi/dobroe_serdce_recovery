@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-export default function VideoWidget() {
+export default function VideoWidget({ inline = false }: { inline?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -11,7 +11,7 @@ export default function VideoWidget() {
 
   return (
     <>
-      <div className={`video-widget ${expanded ? "video-widget--expanded" : ""}`}>
+    <div className={`video-widget ${inline ? "video-widget--inline" : "video-widget--floating"} ...`}>
         {!expanded && (
           <div className="video-widget__thumb" onClick={() => setExpanded(true)}>
             <iframe

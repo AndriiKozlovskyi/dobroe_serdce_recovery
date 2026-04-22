@@ -4,6 +4,7 @@ import room2 from "../assets/house/room2.jpeg";
 import room3 from "../assets/house/room3.jpeg";
 import room4 from "../assets/house/room4.jpeg";
 import room5 from "../assets/house/room5.jpeg";
+import VideoWidget from "./VideoWidget";
 
 const icons = {
   individual: <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#2dd4bf" strokeWidth="2" fill="#f0fdfa"/><path d="M24 16a4 4 0 110 8 4 4 0 010-8zm0 10c-4.42 0-8 2.24-8 5v1h16v-1c0-2.76-3.58-5-8-5z" fill="#2dd4bf"/><circle cx="34" cy="16" r="3" stroke="#2dd4bf" strokeWidth="1.5" fill="none"/></svg>,
@@ -31,6 +32,9 @@ export default function AboutGallery() {
         <p className="about-gallery-subtitle reveal d-1">{t("aboutGallery.subtitle")}</p>
 
         <div className="about-gallery-grid">
+          							<div className="about-video-inline">
+							<VideoWidget inline />
+							</div>
           {/* Left feature cards */}
           <div className="about-gallery-cards about-gallery-cards--left">
             {features.slice(0, 2).map((f, i) => (
