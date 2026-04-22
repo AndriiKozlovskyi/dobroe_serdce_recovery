@@ -20,6 +20,7 @@
   opacity: 1;
 }
 
+
 /* ================================================
    T1272 – Fixed header / nav
    ================================================ */
@@ -29,7 +30,7 @@
   top: 0;
   left: 0;
   right: 0;
-  min-height: 68px;
+  min-height: 78px;
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -48,14 +49,14 @@
 }
 
 .ls__nav-logo-img {
-  max-width: 60px;
-  width: 60px;
+  max-width: 68px;
+  width: 68px;
   object-fit: contain;
 }
 
 .ls__nav-logo-text {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -79,14 +80,14 @@
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
 }
 
 .ls__nav-link {
   text-decoration: none;
   color: #000;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
   transition: color 0.3s ease;
 }
 
@@ -134,7 +135,7 @@
 .ls__cover-content {
   text-align: center;
   color: #fff;
-  max-width: 920px;
+  max-width: 960px;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
@@ -143,9 +144,9 @@
 .ls__cover-uptitle {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 36px;
   line-height: 1.55;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   padding-top: 10px;
   padding-bottom: 20px;
@@ -162,7 +163,7 @@
 .ls__cover-title {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
-  font-size: 72px;
+  font-size: 88px;
   line-height: 1.17;
   letter-spacing: 1px;
   padding: 24px 0;
@@ -172,17 +173,17 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .ls__cover-uptitle { font-size: 20px; }
-  .ls__cover-title   { font-size: 68px; }
+.ls__cover-uptitle { font-size: 30px; }
+  .ls__cover-title   { font-size: 78px; }
 }
 
 @media screen and (max-width: 640px) {
-  .ls__cover-uptitle { font-size: 18px; padding-right: 10px; padding-left: 10px; }
-  .ls__cover-title   { font-size: 32px; padding-right: 10px; padding-left: 10px; }
+  .ls__cover-uptitle { font-size: 24px; padding-right: 10px; padding-left: 10px; }
+  .ls__cover-title   { font-size: 42px; padding-right: 10px; padding-left: 10px; }
 }
 
 @media screen and (max-width: 480px) {
-  .ls__cover-title { font-size: 30px; }
+  .ls__cover-title { font-size: 36px; }
 }
 
 .ls__cover-buttons {
@@ -204,7 +205,6 @@
 }
 
 .ls__btn {
-  /* Base — mirrors .t-btnflex */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -218,15 +218,13 @@
   text-decoration: none;
   white-space: nowrap;
   box-sizing: border-box;
-  /* Size — mirrors .t-btnflex_smd: height 50px, font-size 15px */
-  --height: 50px;
+  --height: 58px;
   --border-width: 2px;
-  font-size: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
+  font-size: 18px;
+  padding-left: 28px;
+  padding-right: 28px;
   padding-top: calc(((var(--height) - 1em * 1.4) / 2) - var(--border-width));
   padding-bottom: calc(((var(--height) - 1em * 1.4) / 2) - var(--border-width));
-  /* Appearance — mirrors #rec .t-btnflex_type_button */
   color: #fff;
   background-color: #63c8ff;
   border-style: solid;
@@ -234,11 +232,9 @@
   border-width: var(--border-width);
   border-radius: 100px;
   box-shadow: none;
-  /* Flash container */
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  /* Transition */
   transition-duration: 0.2s;
   transition-property: background-color, color, border-color, box-shadow, opacity, transform, gap;
   transition-timing-function: ease-in-out;
@@ -283,7 +279,7 @@
 
 .ls__t396 {
   background-color: #fff;
-  height: 353px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -293,13 +289,13 @@
 .ls__t396-inner {
   text-align: center;
   width: 100%;
-  max-width: 560px;
+  max-width: 640px;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
 .ls__t396-phone {
-  font-size: 26px;
+  font-size: 44px;
   font-weight: 500;
   line-height: 1.55;
 }
@@ -310,7 +306,7 @@
 }
 
 .ls__t396-address {
-  font-size: 26px;
+  font-size: 44px;
   font-weight: 500;
   line-height: 1.55;
 }
@@ -321,7 +317,7 @@
 }
 
 .ls__t396-twogis {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.55;
 }
@@ -344,8 +340,8 @@
 }
 
 .ls__t396-icons img {
-  width: 50px;
-  height: 50px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   display: block;
 }
@@ -390,11 +386,11 @@
 }
 
 .ls__t898-btn-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
   background: rgba(0, 0, 0, 0.55);
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   white-space: nowrap;
   font-family: "Roboto", Arial, sans-serif;
@@ -402,8 +398,8 @@
 
 .ls__t898-svg-wrapper {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   flex-shrink: 0;
 }
 
@@ -421,8 +417,8 @@
 }
 
 .ls__t898-toggle {
-  width: 56px;
-  height: 56px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   border: none;
   cursor: pointer;
@@ -463,8 +459,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   text-decoration: none;
 }
 
@@ -525,7 +521,7 @@
 .ls__mobile-link {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 24px;
   color: #000;
   text-decoration: none;
 }
@@ -542,7 +538,7 @@
 
 @media screen and (max-width: 960px) {
   .ls__nav {
-    min-height: 64px;
+    min-height: 70px;
     position: fixed;
     overflow: visible;
   }
@@ -564,41 +560,40 @@
   }
 
   .ls__nav-logo-img {
-    max-width: 44px;
-    width: 44px;
+    max-width: 50px;
+    width: 50px;
   }
 
   .ls__nav-logo-text {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 
 @media screen and (max-width: 479px) {
   .ls__t396 {
-    height: 242px;
+    height: 280px;
   }
 
   .ls__t396-phone,
   .ls__t396-address {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .ls__t396-twogis {
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .ls__t396-icons img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 
-  .ls__cover-uptitle {
-    font-size: 18px;
-  }
+.ls__cover-uptitle { font-size: 22px; }
 
   .ls__btn {
     width: 100%;
     text-align: center;
-    max-width: 200px;
+    max-width: 220px;
+    font-size: 16px;
   }
 }
