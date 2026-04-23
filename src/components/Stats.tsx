@@ -36,7 +36,7 @@ export default function Stats() {
 		{ target: 21, suffix: "", label: t('stats.label1'), sublabel: t('stats.sublabel1') },
 		{ target: 11619, suffix: "", label: t('stats.label2'), sublabel: t('stats.sublabel2') },
 		{ target: 21, suffix: "", label: t('stats.label3'), sublabel: t('stats.sublabel3') },
-		{ target: 35, suffix: "", label: t('stats.label4'), sublabel: t('stats.sublabel4') },
+		{ target: 1, suffix: "", label: t('stats.label4'), sublabel: t('stats.sublabel4') },
 	];
 
 	useEffect(() => {
