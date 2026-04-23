@@ -176,10 +176,6 @@ export default function Hero() {
 			<div className="container">
 				<div className="hero-grid">
 					<div>
-						<div className="hero-badge">
-							<span className="hero-dot"></span>
-							{t('hero.badge')}
-						</div>
 
 						<h1 className="hero-title font-display">
 							{t('hero.title').split('\n').map((line, i) => (
