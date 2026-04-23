@@ -127,8 +127,21 @@
   position: static !important;
 }
 
+
 .about-video-inline .video-widget__thumb {
-  width: 400px;
+	width: 90vw;
+}
+
+@media (max-width: 600px) {
+	.about-video-inline .video-widget__thumb,
+	.about-video-inline .video-widget__expanded {
+		width: 90vw;
+		max-width: 100vw;
+		border-radius: 0;
+		border-radius: 10px;
+		left: 0;
+		right: 0;
+	}
 }
 
 /* On desktop the video column doesn't exist so nothing to hide */
