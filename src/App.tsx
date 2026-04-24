@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import About from "./components/About";
 import Contacts from "./components/Contacts";
 import CTA from "./components/CTA";
 import FAQ from "./components/FAQ";
