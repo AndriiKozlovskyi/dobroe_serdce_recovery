@@ -1,3 +1,16 @@
+/* Show only on mobile */
+.hero-socials-mobile {
+	display: none;
+}
+@media (max-width: 600px) {
+	.hero-socials-mobile {
+		display: flex !important;
+		justify-content: center;
+		margin-top: 16px;
+		gap: 16px;
+		width: 100%;
+	}
+}
 @import "tailwindcss";
 
 /* ── Video Widget ── */
@@ -1539,6 +1552,7 @@ textarea.input { resize: none; min-height: 120px; }
 	flex-wrap: wrap;
 	animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.5s both;
 	justify-content: center;
+	margin-bottom: 2rem;
 }
 .hero-trust-item {
 	display: flex;
