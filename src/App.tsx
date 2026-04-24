@@ -126,7 +126,7 @@ export default function App() {
 				<AboutGallery />
 				<Services />
 				<Certificates />
-				<About />
+				{/* <About /> */}
 				<Stages />
 				<Methods />
 				<DetoxAccordion />
