@@ -74,14 +74,14 @@ export default function Header() {
 						<span className="menu-link-text">{t('header.home')}</span>
 						<span className="link-arrow">→</span>
 					</a>
-					<a href="#services" className="mobile-menu-link" onClick={closeMobile}>
-						<span className="menu-link-icon">⚕️</span>
-						<span className="menu-link-text">{t('header.services')}</span>
-						<span className="link-arrow">→</span>
-					</a>
 					<a href="#about" className="mobile-menu-link" onClick={closeMobile}>
 						<span className="menu-link-icon">ℹ️</span>
 						<span className="menu-link-text">{t('header.about')}</span>
+						<span className="link-arrow">→</span>
+					</a>
+					<a href="#services" className="mobile-menu-link" onClick={closeMobile}>
+						<span className="menu-link-icon">⚕️</span>
+						<span className="menu-link-text">{t('header.services')}</span>
 						<span className="link-arrow">→</span>
 					</a>
 					<a href="#stages" className="mobile-menu-link" onClick={closeMobile}>
@@ -156,11 +156,11 @@ export default function Header() {
 						</div>
 					</a>
 					<div className="nav-links">
-						<a href="#services" className="nav-link">
-							{t('header.services')}
-						</a>
 						<a href="#about" className="nav-link">
 							{t('header.about')}
+						</a>
+						<a href="#services" className="nav-link">
+							{t('header.services')}
 						</a>
 						<a href="#stages" className="nav-link">
 							{t('header.treatment')}
@@ -177,7 +177,8 @@ export default function Header() {
 						<a href="#contact" className="nav-link">
 							{t('header.contacts')}
 						</a>
-						<button
+					</div>
+					<button
 							onClick={toggleLanguage}
 							className="lang-switcher"
 							aria-label="Переключить язык"
@@ -185,7 +186,6 @@ export default function Header() {
 						>
 							{i18n.language === 'ru' ? 'KZ' : 'RU'}
 						</button>
-					</div>
 					<a href="tel:+77788100900" className="btn btn-gold btn-sm nav-cta">
 						<svg
 							width="13"
