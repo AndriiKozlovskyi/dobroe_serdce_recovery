@@ -53,9 +53,6 @@ export default function Footer() {
 						<ul className="footer-links list-none p-0 m-0 space-y-2">
 							<li><a href="#certificates" className="footer-link hover:text-[#0cb195] transition">{t('footer.certificates')}</a></li>
 							<li><a href="#detox" className="footer-link hover:text-[#0cb195] transition">{t('footer.detox')}</a></li>
-							<li><a href="#rehab" className="footer-link hover:text-[#0cb195] transition">{t('footer.rehab')}</a></li>
-							<li><a href="#psychotherapy" className="footer-link hover:text-[#0cb195] transition">{t('footer.psychotherapy')}</a></li>
-							<li><a href="#consultation" className="footer-link hover:text-[#0cb195] transition">{t('footer.consultation')}</a></li>
 						</ul>
 					</div>
 
