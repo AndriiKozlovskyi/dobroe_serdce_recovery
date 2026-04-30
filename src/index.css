@@ -1529,6 +1529,12 @@ textarea.input { resize: none; min-height: 120px; }
 	margin-bottom: 1.5rem;
 	animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.2s both;
 }
+
+@media (min-width: 1024px) {
+  .hero-title {
+    margin-top: 4rem;
+  }
+}
 .hero-sub {
 	font-size: var(--text-md);
 	color: rgba(255,255,255,0.8);

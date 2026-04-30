@@ -33,9 +33,9 @@ export default function Stats() {
 	const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
 	const STATS = [
-		{ target: 21, suffix: "", label: t('stats.label1'), sublabel: t('stats.sublabel1') },
-		{ target: 11619, suffix: "", label: t('stats.label2'), sublabel: t('stats.sublabel2') },
-		{ target: 21, suffix: "", label: t('stats.label3'), sublabel: t('stats.sublabel3') },
+		{ target: 7, suffix: "", label: t('stats.label1'), sublabel: t('stats.sublabel1') },
+		{ target: 4589, suffix: "", label: t('stats.label2'), sublabel: t('stats.sublabel2') },
+		{ target: 14, suffix: "", label: t('stats.label3'), sublabel: t('stats.sublabel3') },
 		{ target: 1, suffix: "", label: t('stats.label4'), sublabel: t('stats.sublabel4') },
 	];
 

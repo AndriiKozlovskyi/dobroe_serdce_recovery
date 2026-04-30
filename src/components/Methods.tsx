@@ -8,25 +8,25 @@ export default function Methods() {
 			ico: "💊",
 			title: t('methods.method1'),
 			desc: t('methods.method1Desc'),
-			tags: [t('methods.method1Tag1'), t('methods.method1Tag2'), t('methods.method1Tag3'), t('methods.method1Tag4')],
+			tags: [t('methods.method1Tag1')],
 		},
 		{
 			ico: "🧠",
 			title: t('methods.method2'),
 			desc: t('methods.method2Desc'),
-			tags: [t('methods.method2Tag1'), t('methods.method2Tag2'), t('methods.method2Tag3'), t('methods.method2Tag4')],
+			tags: [t('methods.method2Tag1'), t('methods.method2Tag2'), t('methods.method2Tag3'), t('methods.method2Tag4'), t('methods.method2Tag5')],
 		},
 		{
 			ico: "🏃",
 			title: t('methods.method3'),
 			desc: t('methods.method3Desc'),
-			tags: [t('methods.method3Tag1'), t('methods.method3Tag2'), t('methods.method3Tag3'), t('methods.method3Tag4')],
+			tags: [t('methods.method3Tag1'), t('methods.method3Tag2'), t('methods.method3Tag3'), t('methods.method3Tag4'), t('methods.method3Tag5')],
 		},
 		{
 			ico: "🎨",
 			title: t('methods.method4'),
 			desc: t('methods.method4Desc'),
-			tags: [t('methods.method4Tag1'), t('methods.method4Tag2'), t('methods.method4Tag3'), t('methods.method4Tag4')],
+			tags: [t('methods.method4Tag1'), t('methods.method4Tag2'), t('methods.method4Tag3')],
 		},
 		{
 			ico: "🎭",
@@ -44,7 +44,7 @@ export default function Methods() {
 			ico: "🧘",
 			title: t('methods.method7'),
 			desc: t('methods.method7Desc'),
-			tags: [t('methods.method7Tag1'), t('methods.method7Tag2'), t('methods.method7Tag3'), t('methods.method7Tag4')],
+			tags: [t('methods.method7Tag1'), t('methods.method7Tag2'), t('methods.method7Tag3')],
 		},
 		{
 			ico: "🧩",
