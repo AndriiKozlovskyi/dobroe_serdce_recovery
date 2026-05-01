@@ -1,22 +1,3 @@
-/* Bigger footer social icons on phones */
-@media (max-width: 640px) {
-	#footer .flex a svg {
-		width: 30px !important;
-		height: 30px !important;
-	}
-}
-/* Responsive: Larger footer text on phones */
-@media (max-width: 640px) {
-	#footer, #footer .footer-brand-name, #footer .footer-brand-sub, #footer .footer-brand-desc, #footer .footer-col-title, #footer .footer-link, #footer .footer-phone, #footer .footer-addr, #footer .footer-copy, #footer .footer-tag {
-		font-size: 1.07rem !important;
-	}
-	#footer .footer-brand-name {
-		font-size: 1.45rem !important;
-	}
-	#footer .footer-col-title {
-		font-size: 1.09rem !important;
-	}
-}
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════
