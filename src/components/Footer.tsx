@@ -42,7 +42,14 @@ export default function Footer() {
 				<div className="footer-bottom">
 					<span className="footer-copy">{t('footer.copy')}</span>
 					<span className="footer-tag">{t('footer.tag')}</span>
+					<small className="footer-powered">
+						<a class="text-black/20 flex flex-row" href="https://evola-tec.com" target="_blank">
+							<p>Powered by <strong>Evola</strong></p>
+							<div class="text-[#004275]/20 font-bold">Tec</div>
+						</a>
+				</small>
 				</div>
+			
 			</div>
 		</footer>
 	);
